@@ -237,41 +237,6 @@
     </div>
 </section>
 
-{{-- KONTAK --}}
-@if($profil->alamat || $profil->no_hp || $profil->email)
-<section class="section section--alt">
-    <div class="container">
-        <div class="section-header">
-            <span class="badge">Hubungi Kami</span>
-            <h2 class="section-heading">Kontak &amp; Lokasi</h2>
-        </div>
-        <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
-            @if($profil->alamat)
-            <div style="text-align:center;padding:24px 32px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border)">
-                <div style="font-size:2rem;margin-bottom:8px">📍</div>
-                <div style="font-weight:700;color:var(--dark);margin-bottom:4px">Alamat</div>
-                <div style="color:var(--muted);font-size:.9rem">{{ $profil->alamat }}</div>
-            </div>
-            @endif
-            @if($profil->no_hp)
-            <div style="text-align:center;padding:24px 32px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border)">
-                <div style="font-size:2rem;margin-bottom:8px">📞</div>
-                <div style="font-weight:700;color:var(--dark);margin-bottom:4px">WhatsApp</div>
-                <div style="color:var(--muted);font-size:.9rem">{{ $profil->no_hp }}</div>
-            </div>
-            @endif
-            @if($profil->email)
-            <div style="text-align:center;padding:24px 32px;background:var(--white);border-radius:var(--radius);border:1px solid var(--border)">
-                <div style="font-size:2rem;margin-bottom:8px">✉️</div>
-                <div style="font-weight:700;color:var(--dark);margin-bottom:4px">Email</div>
-                <div style="color:var(--muted);font-size:.9rem">{{ $profil->email }}</div>
-            </div>
-            @endif
-        </div>
-    </div>
-</section>
-@endif
-
 <section class="cta">
     <div class="container cta-inner">
         <h2>Ingin Bergabung Bersama Kami?</h2>
