@@ -43,6 +43,15 @@ jobs:
       - name: Run migrations
         run: php artisan migrate --force
 
+      - name: Debug - cek isi AuthController
+        run: |
+          echo "=== Isi AuthController.php ==="
+          cat app/Http/Controllers/Auth/AuthController.php
+          echo "=== List folder Auth ==="
+          ls -la app/Http/Controllers/Auth/
+          echo "=== Cek classmap ==="
+          grep -i "RegistrationTest" vendor/composer/autoload_classmap.php || echo "tidak ditemukan"
+
       - name: Run PHPUnit tests
         run: php artisan test
 
