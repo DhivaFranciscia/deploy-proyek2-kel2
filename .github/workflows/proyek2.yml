@@ -133,8 +133,9 @@ jobs:
             # Masuk ke folder project
             cd /home/${{ secrets.SERVER_USER }}/RPL2B-kelompok-2
 
-            # Pull image terbaru
-            docker pull ghcr.io/${{ github.repository }}:latest
+            # Pull image terbaru (lowercase)
+            IMAGE=$(echo "ghcr.io/${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+            docker pull $IMAGE:latest
 
             # Update container tanpa downtime besar
             docker compose up -d --remove-orphans
