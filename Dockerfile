@@ -35,6 +35,9 @@ WORKDIR /var/www/html
 # Copy file project
 COPY . .
 
+# Install & build frontend
+RUN npm install && npm run build
+
 # Install dependencies Laravel
 RUN composer install --optimize-autoloader --no-dev
 
